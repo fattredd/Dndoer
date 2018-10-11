@@ -33,6 +33,7 @@ namespace Dndoer
             this.resultD20 = new System.Windows.Forms.Label();
             this.d20Image = new System.Windows.Forms.PictureBox();
             this.DiceInput = new System.Windows.Forms.TextBox();
+            this.errorMsg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.d20Image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,10 +51,10 @@ namespace Dndoer
             // resultD20
             // 
             this.resultD20.Font = new System.Drawing.Font("Arial Unicode", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultD20.Location = new System.Drawing.Point(127, 12);
+            this.resultD20.Location = new System.Drawing.Point(131, 12);
             this.resultD20.Name = "resultD20";
-            this.resultD20.Size = new System.Drawing.Size(94, 80);
-            this.resultD20.TabIndex = 2;
+            this.resultD20.Size = new System.Drawing.Size(90, 80);
+            this.resultD20.TabIndex = 5;
             this.resultD20.Text = "0";
             this.resultD20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -64,7 +65,7 @@ namespace Dndoer
             this.d20Image.Name = "d20Image";
             this.d20Image.Size = new System.Drawing.Size(109, 80);
             this.d20Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.d20Image.TabIndex = 3;
+            this.d20Image.TabIndex = 2;
             this.d20Image.TabStop = false;
             this.d20Image.Click += new System.EventHandler(this.d20Image_Click);
             // 
@@ -79,15 +80,27 @@ namespace Dndoer
             this.DiceInput.TabIndex = 4;
             this.DiceInput.Text = "1d20+2";
             // 
+            // errorMsg
+            // 
+            this.errorMsg.BackColor = System.Drawing.SystemColors.Control;
+            this.errorMsg.ForeColor = System.Drawing.Color.DarkRed;
+            this.errorMsg.Location = new System.Drawing.Point(106, 12);
+            this.errorMsg.Name = "errorMsg";
+            this.errorMsg.Size = new System.Drawing.Size(115, 26);
+            this.errorMsg.TabIndex = 6;
+            this.errorMsg.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(233, 139);
+            this.Controls.Add(this.errorMsg);
             this.Controls.Add(this.DiceInput);
             this.Controls.Add(this.d20Image);
             this.Controls.Add(this.resultD20);
             this.Controls.Add(this.d20RollBttn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "DnDoer";
@@ -103,6 +116,7 @@ namespace Dndoer
         private System.Windows.Forms.Label resultD20;
         private System.Windows.Forms.PictureBox d20Image;
         private System.Windows.Forms.TextBox DiceInput;
+        private System.Windows.Forms.Label errorMsg;
     }
 }
 

@@ -28,6 +28,8 @@ namespace Dndoer
             int result = 0;
             int operation = 0; // 0 is add, 1 is sub
 
+            errorMsg.Text = "";
+
             foreach (string item in dice)
             {
                 // Run the operation
@@ -35,6 +37,7 @@ namespace Dndoer
                 else if (operation == 1) { result -= temp; }
 
                 string clean = item.Trim();
+
                 if (int.TryParse(clean, out temp)) // If it's a number
                 {
                     // Then that's what it is
@@ -44,11 +47,15 @@ namespace Dndoer
                     // Roll the dice
                     string[] dieArray = clean.Split('d');
                     dieArray[0] = (dieArray[0] == "" ? "1" : dieArray[0]);
-                    int[] die = Array.ConvertAll(dieArray, num => int.Parse(num));
-
-                    int maxNum = (int)die[1] * die[0];
-                    int minNum = (int)die[0];
-                    temp = rnd.Next(minNum, maxNum);
+                    int[] die = { 0,0 };
+                    if (int.TryParse(dieArray[0], out die[0]) & int.TryParse(dieArray[1], out die[1]))
+                    {
+                        temp = rnd.Next(die[0], die[0] * die[1]);
+                    } else
+                    {
+                        errorMsg.Text = "Error: " + clean + " is invalid.\nEvaluating as 0.";
+                        temp = 0;
+                    }
 
                 } else if (Regex.Match(clean, reg).Success) // If it's an operation
                 {
@@ -56,6 +63,11 @@ namespace Dndoer
                     if (clean == "+") { operation = 0;  }
                     else if (clean == "-") { operation = 1; }
                     else { operation = 0; }
+                    temp = 0;
+                } else
+                {
+                    // Ignore any broken input
+                    errorMsg.Text = "Error:" + clean + "is invalid.";
                     temp = 0;
                 }
             }
@@ -69,6 +81,7 @@ namespace Dndoer
 
         private void d20Image_Click(object sender, EventArgs e)
         {
+            
             if (DiceInput.Text == "1d20+2")
             {
                 DiceInput.Text = "1d20";
