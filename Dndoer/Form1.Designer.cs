@@ -59,6 +59,7 @@ namespace Dndoer
             this.resultD20.TabIndex = 5;
             this.resultD20.Text = "0";
             this.resultD20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.resultD20.Click += new System.EventHandler(this.resultD20_Click);
             // 
             // d20Image
             // 
@@ -101,11 +102,13 @@ namespace Dndoer
             this.Controls.Add(this.d20Image);
             this.Controls.Add(this.resultD20);
             this.Controls.Add(this.d20RollBttn);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "DnDoer";
             this.TransparencyKey = System.Drawing.Color.White;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_keypress);
             ((System.ComponentModel.ISupportInitialize)(this.d20Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

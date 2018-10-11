@@ -19,7 +19,7 @@ namespace Dndoer
             InitializeComponent();
         }
 
-        private void d20RollBttn_Click(object sender, EventArgs e)
+        private void roll()
         {
             string reg = "([\\+|\\-| ])";
             string[] dice = Regex.Split(DiceInput.Text, reg);
@@ -79,7 +79,12 @@ namespace Dndoer
             resultD20.Text = result.ToString();
         }
 
-        private void d20Image_Click(object sender, EventArgs e)
+        private void d20RollBttn_Click(object sender, EventArgs e)
+        {
+            roll();
+        }
+
+            private void d20Image_Click(object sender, EventArgs e)
         {
             
             if (DiceInput.Text == "1d20+2")
@@ -88,6 +93,22 @@ namespace Dndoer
             } else
             {
                 DiceInput.Text = "1d20+2";
+            }
+        }
+
+        private void resultD20_Click(object sender, EventArgs e)
+        {
+            this.TopMost = !this.TopMost;
+        }
+
+        private void Form1_keypress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                roll();
+            } else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
             }
         }
     }
