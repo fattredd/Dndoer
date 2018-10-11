@@ -31,9 +31,9 @@ namespace Dndoer
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.d20RollBttn = new System.Windows.Forms.Button();
             this.resultD20 = new System.Windows.Forms.Label();
-            this.d20Image = new System.Windows.Forms.PictureBox();
             this.DiceInput = new System.Windows.Forms.TextBox();
             this.errorMsg = new System.Windows.Forms.Label();
+            this.d20Image = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.d20Image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,9 +41,10 @@ namespace Dndoer
             // 
             this.d20RollBttn.Font = new System.Drawing.Font("Arial Unicode", 12F);
             this.d20RollBttn.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.d20RollBttn.Location = new System.Drawing.Point(131, 97);
+            this.d20RollBttn.Location = new System.Drawing.Point(191, 215);
+            this.d20RollBttn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.d20RollBttn.Name = "d20RollBttn";
-            this.d20RollBttn.Size = new System.Drawing.Size(90, 31);
+            this.d20RollBttn.Size = new System.Drawing.Size(140, 48);
             this.d20RollBttn.TabIndex = 1;
             this.d20RollBttn.Text = "Roll Dice";
             this.d20RollBttn.UseVisualStyleBackColor = true;
@@ -51,52 +52,57 @@ namespace Dndoer
             // 
             // resultD20
             // 
-            this.resultD20.Font = new System.Drawing.Font("Arial Unicode", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultD20.Font = new System.Drawing.Font("Arial Unicode", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultD20.ForeColor = System.Drawing.Color.Black;
-            this.resultD20.Location = new System.Drawing.Point(131, 12);
+            this.resultD20.Location = new System.Drawing.Point(191, 18);
+            this.resultD20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.resultD20.Name = "resultD20";
-            this.resultD20.Size = new System.Drawing.Size(90, 80);
-            this.resultD20.TabIndex = 5;
+            this.resultD20.Size = new System.Drawing.Size(140, 186);
+            this.resultD20.TabIndex = 0;
             this.resultD20.Text = "0";
             this.resultD20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.resultD20.Click += new System.EventHandler(this.resultD20_Click);
-            // 
-            // d20Image
-            // 
-            this.d20Image.Image = global::Dndoer.Properties.Resources.twenty_sided_dice;
-            this.d20Image.Location = new System.Drawing.Point(12, 12);
-            this.d20Image.Name = "d20Image";
-            this.d20Image.Size = new System.Drawing.Size(109, 80);
-            this.d20Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.d20Image.TabIndex = 2;
-            this.d20Image.TabStop = false;
-            this.d20Image.Click += new System.EventHandler(this.d20Image_Click);
             // 
             // DiceInput
             // 
             this.DiceInput.BackColor = System.Drawing.Color.Snow;
             this.DiceInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DiceInput.Font = new System.Drawing.Font("Arial Unicode", 12F);
-            this.DiceInput.Location = new System.Drawing.Point(12, 98);
+            this.DiceInput.Location = new System.Drawing.Point(19, 217);
+            this.DiceInput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DiceInput.Name = "DiceInput";
-            this.DiceInput.Size = new System.Drawing.Size(110, 29);
-            this.DiceInput.TabIndex = 4;
+            this.DiceInput.Size = new System.Drawing.Size(164, 40);
+            this.DiceInput.TabIndex = 2;
             this.DiceInput.Text = "1d20+2";
             // 
             // errorMsg
             // 
             this.errorMsg.ForeColor = System.Drawing.Color.DarkRed;
-            this.errorMsg.Location = new System.Drawing.Point(106, 12);
+            this.errorMsg.Location = new System.Drawing.Point(196, 18);
+            this.errorMsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.errorMsg.Name = "errorMsg";
-            this.errorMsg.Size = new System.Drawing.Size(115, 26);
+            this.errorMsg.Size = new System.Drawing.Size(135, 62);
             this.errorMsg.TabIndex = 6;
             this.errorMsg.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // d20Image
+            // 
+            this.d20Image.Image = global::Dndoer.Properties.Resources.twenty_sided_dice;
+            this.d20Image.Location = new System.Drawing.Point(18, 18);
+            this.d20Image.Margin = new System.Windows.Forms.Padding(0);
+            this.d20Image.Name = "d20Image";
+            this.d20Image.Size = new System.Drawing.Size(165, 189);
+            this.d20Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.d20Image.TabIndex = 2;
+            this.d20Image.TabStop = false;
+            this.d20Image.Click += new System.EventHandler(this.d20Image_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(233, 139);
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ClientSize = new System.Drawing.Size(350, 288);
             this.Controls.Add(this.errorMsg);
             this.Controls.Add(this.DiceInput);
             this.Controls.Add(this.d20Image);
@@ -105,6 +111,7 @@ namespace Dndoer
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "DnDoer";
             this.TransparencyKey = System.Drawing.Color.White;
