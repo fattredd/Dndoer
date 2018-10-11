@@ -39,9 +39,9 @@ namespace Dndoer
             // d20RollBttn
             // 
             this.d20RollBttn.Font = new System.Drawing.Font("Arial Unicode", 12F);
-            this.d20RollBttn.Location = new System.Drawing.Point(142, 98);
+            this.d20RollBttn.Location = new System.Drawing.Point(131, 97);
             this.d20RollBttn.Name = "d20RollBttn";
-            this.d20RollBttn.Size = new System.Drawing.Size(75, 29);
+            this.d20RollBttn.Size = new System.Drawing.Size(90, 31);
             this.d20RollBttn.TabIndex = 1;
             this.d20RollBttn.Text = "Roll D20";
             this.d20RollBttn.UseVisualStyleBackColor = true;
@@ -49,32 +49,33 @@ namespace Dndoer
             // 
             // resultD20
             // 
-            this.resultD20.AutoSize = true;
-            this.resultD20.Font = new System.Drawing.Font("Arial Unicode", 12F);
-            this.resultD20.Location = new System.Drawing.Point(127, 39);
+            this.resultD20.Font = new System.Drawing.Font("Arial Unicode", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultD20.Location = new System.Drawing.Point(127, 12);
             this.resultD20.Name = "resultD20";
-            this.resultD20.Size = new System.Drawing.Size(90, 21);
+            this.resultD20.Size = new System.Drawing.Size(94, 80);
             this.resultD20.TabIndex = 2;
-            this.resultD20.Text = "No Roll Yet";
+            this.resultD20.Text = "0";
+            this.resultD20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // d20Image
             // 
             this.d20Image.Image = global::Dndoer.Properties.Resources.twenty_sided_dice;
-            this.d20Image.Location = new System.Drawing.Point(12, 11);
+            this.d20Image.Location = new System.Drawing.Point(12, 12);
             this.d20Image.Name = "d20Image";
-            this.d20Image.Size = new System.Drawing.Size(109, 77);
+            this.d20Image.Size = new System.Drawing.Size(109, 80);
             this.d20Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.d20Image.TabIndex = 3;
             this.d20Image.TabStop = false;
-            this.d20Image.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.d20Image.Click += new System.EventHandler(this.d20Image_Click);
             // 
             // DiceInput
             // 
             this.DiceInput.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DiceInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DiceInput.Font = new System.Drawing.Font("Arial Unicode", 12F);
             this.DiceInput.Location = new System.Drawing.Point(12, 98);
             this.DiceInput.Name = "DiceInput";
-            this.DiceInput.Size = new System.Drawing.Size(109, 29);
+            this.DiceInput.Size = new System.Drawing.Size(110, 29);
             this.DiceInput.TabIndex = 4;
             this.DiceInput.Text = "1d20+2";
             // 
@@ -82,7 +83,7 @@ namespace Dndoer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(229, 139);
+            this.ClientSize = new System.Drawing.Size(233, 139);
             this.Controls.Add(this.DiceInput);
             this.Controls.Add(this.d20Image);
             this.Controls.Add(this.resultD20);

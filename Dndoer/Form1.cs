@@ -58,7 +58,6 @@ namespace Dndoer
                     else { operation = 0; }
                     temp = 0;
                 }
-                Console.WriteLine(temp);
             }
 
             // Run the operation one last time
@@ -68,7 +67,7 @@ namespace Dndoer
             resultD20.Text = result.ToString();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void d20Image_Click(object sender, EventArgs e)
         {
             if (DiceInput.Text == "1d20+2")
             {
