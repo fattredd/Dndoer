@@ -40,17 +40,19 @@ namespace Dndoer
             // d20RollBttn
             // 
             this.d20RollBttn.Font = new System.Drawing.Font("Arial Unicode", 12F);
+            this.d20RollBttn.ForeColor = System.Drawing.SystemColors.WindowText;
             this.d20RollBttn.Location = new System.Drawing.Point(131, 97);
             this.d20RollBttn.Name = "d20RollBttn";
             this.d20RollBttn.Size = new System.Drawing.Size(90, 31);
             this.d20RollBttn.TabIndex = 1;
-            this.d20RollBttn.Text = "Roll D20";
+            this.d20RollBttn.Text = "Roll Dice";
             this.d20RollBttn.UseVisualStyleBackColor = true;
             this.d20RollBttn.Click += new System.EventHandler(this.d20RollBttn_Click);
             // 
             // resultD20
             // 
             this.resultD20.Font = new System.Drawing.Font("Arial Unicode", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultD20.ForeColor = System.Drawing.Color.Black;
             this.resultD20.Location = new System.Drawing.Point(131, 12);
             this.resultD20.Name = "resultD20";
             this.resultD20.Size = new System.Drawing.Size(90, 80);
@@ -71,7 +73,7 @@ namespace Dndoer
             // 
             // DiceInput
             // 
-            this.DiceInput.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DiceInput.BackColor = System.Drawing.Color.Snow;
             this.DiceInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DiceInput.Font = new System.Drawing.Font("Arial Unicode", 12F);
             this.DiceInput.Location = new System.Drawing.Point(12, 98);
@@ -82,7 +84,6 @@ namespace Dndoer
             // 
             // errorMsg
             // 
-            this.errorMsg.BackColor = System.Drawing.SystemColors.Control;
             this.errorMsg.ForeColor = System.Drawing.Color.DarkRed;
             this.errorMsg.Location = new System.Drawing.Point(106, 12);
             this.errorMsg.Name = "errorMsg";
