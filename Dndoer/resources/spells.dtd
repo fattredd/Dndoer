@@ -1,0 +1,23 @@
+<!ELEMENT spells (spell*)>
+<!ELEMENT spell (name, school, subschool*, descriptor*, level, components, castingTime, range, target*, area*, effect*, duration, savingThrow*, spellResistance*, blurb, description,  materialComponents*, focus*, XPCost*, reference)>
+<!ATTLIST spell id ID #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT school (#PCDATA)>
+<!ELEMENT subschool (#PCDATA)>
+<!ELEMENT descriptor (#PCDATA)>
+<!ELEMENT level (#PCDATA)>
+<!ELEMENT components (#PCDATA)>
+<!ELEMENT castingTime (#PCDATA)>
+<!ELEMENT range (#PCDATA)>
+<!ELEMENT target (#PCDATA)>
+<!ELEMENT area (#PCDATA)>
+<!ELEMENT effect (#PCDATA)>
+<!ELEMENT duration (#PCDATA)>
+<!ELEMENT savingThrow (#PCDATA)>
+<!ELEMENT spellResistance (#PCDATA)>
+<!ELEMENT blurb (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT reference (#PCDATA)>
+<!ELEMENT XPCost (#PCDATA)>
+<!ELEMENT materialComponents (#PCDATA)>
+<!ELEMENT focus (#PCDATA)>

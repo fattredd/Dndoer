@@ -1,0 +1,33 @@
+<!ELEMENT monsters (monster*)>
+<!ELEMENT monster (category, name, size, type, descriptor*, hitDice, initiative, speed, armorClass, baseAttack, grapple*, attack, fullAttack, space, reach, specialAttacks*, specialQualities*, saves, abilities, skills*, feats*, environment, organization, challengeRating, treasure, alignment, advancement*, levelAdjustment*, reference, categoryDescription*, description)>
+<!ATTLIST monster id ID #REQUIRED>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT descriptor (#PCDATA)>
+<!ELEMENT hitDice (#PCDATA)>
+<!ELEMENT initiative (#PCDATA)>
+<!ELEMENT speed (#PCDATA)>
+<!ELEMENT armorClass (#PCDATA)>
+<!ELEMENT baseAttack (#PCDATA)>
+<!ELEMENT grapple (#PCDATA)>
+<!ELEMENT attack (#PCDATA)>
+<!ELEMENT fullAttack (#PCDATA)>
+<!ELEMENT space (#PCDATA)>
+<!ELEMENT reach (#PCDATA)>
+<!ELEMENT specialAttacks (#PCDATA)>
+<!ELEMENT specialQualities (#PCDATA)>
+<!ELEMENT saves (#PCDATA)>
+<!ELEMENT abilities (#PCDATA)>
+<!ELEMENT skills (#PCDATA)>
+<!ELEMENT feats (#PCDATA)>
+<!ELEMENT environment (#PCDATA)>
+<!ELEMENT organization (#PCDATA)>
+<!ELEMENT challengeRating (#PCDATA)>
+<!ELEMENT treasure (#PCDATA)>
+<!ELEMENT alignment (#PCDATA)>
+<!ELEMENT advancement (#PCDATA)>
+<!ELEMENT levelAdjustment (#PCDATA)>
+<!ELEMENT categoryDescription (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
