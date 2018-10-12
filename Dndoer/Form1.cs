@@ -7,12 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
 namespace Dndoer
 {
     public partial class Form1 : Form
     {
+        [DllImport("user32.dll")]
+        public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int key);
+        [DllImport("user32.dll")]
+        public static extern bool UnregisterHotKey(IntPtr hwnd, int id);
+        const int mActionHotKeyID = 1;
+
         Random rnd = new Random();
         bool stayTop = false;
         private Timer timer1;
@@ -126,6 +133,16 @@ namespace Dndoer
             } else if (e.KeyCode == Keys.F1)
             {
                 stayTop = !stayTop;
+
+                if (stayTop)
+                {
+                    RegisterHotKey(this.Handle, mActionHotKeyID, 0, (int)Keys.F11);
+                }
+                else
+                {
+                    UnregisterHotKey(this.Handle, mActionHotKeyID);
+                }
+
                 errorMsg.ForeColor = System.Drawing.Color.Black;
                 errorMsg.Text = "Top lock toggled" + stayTop;
                 t.Start();
@@ -164,6 +181,16 @@ namespace Dndoer
         private void t1_Tick(object sender, EventArgs e)
         {
             this.TopMost = stayTop;
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x0312 && m.WParam.ToInt32() == mActionHotKeyID)
+            {
+                // Do global keybind
+                roll();
+            }
+            base.WndProc(ref m);
         }
     }
 }
