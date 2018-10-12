@@ -127,9 +127,11 @@ namespace Dndoer
             if (e.KeyCode == Keys.Enter | e.KeyCode == Keys.Space)
             {
                 roll();
+
             } else if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
+
             } else if (e.KeyCode == Keys.F1)
             {
                 stayTop = !stayTop;
@@ -144,7 +146,7 @@ namespace Dndoer
                 }
 
                 errorMsg.ForeColor = System.Drawing.Color.Black;
-                errorMsg.Text = "Top lock toggled" + stayTop;
+                errorMsg.Text = "Top lock toggled " + stayTop;
                 t.Start();
             }
             else if (e.KeyCode == Keys.F2)
