@@ -29,6 +29,7 @@ namespace Dndoer
             int operation = 0; // 0 is add, 1 is sub
 
             errorMsg.Text = "";
+            errorMsg.ForeColor = System.Drawing.Color.Maroon;
 
             foreach (string item in dice)
             {
@@ -103,13 +104,50 @@ namespace Dndoer
 
         private void Form1_keypress(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            var t = new Timer();
+
+            errorMsg.ForeColor = System.Drawing.Color.Black;
+            t.Interval = 1000; // it will Tick in 1 second
+            t.Tick += (s, i) =>
+            {
+                errorMsg.Text = "";
+                t.Stop();
+            };
+
+            if (e.KeyCode == Keys.Enter | e.KeyCode == Keys.Space)
             {
                 roll();
             } else if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
+            } else if (e.KeyCode == Keys.F1)
+            {
+                this.TopMost = !this.TopMost;
+                errorMsg.ForeColor = System.Drawing.Color.Black;
+                errorMsg.Text = "Top lock toggled";
+                t.Start();
             }
+            else if (e.KeyCode == Keys.F2)
+            {
+                FormBorderStyle a = System.Windows.Forms.FormBorderStyle.None;
+                FormBorderStyle b = System.Windows.Forms.FormBorderStyle.FixedSingle;
+                
+                if (this.FormBorderStyle == a)
+                {
+                    this.FormBorderStyle = b;
+                } else
+                {
+                    this.FormBorderStyle = a;
+                }
+                errorMsg.Text = "Title bar toggled";
+                t.Start();
+            }
+            else if (e.KeyCode == Keys.F12)
+            {
+                errorMsg.Text = "J. Butler";
+                t.Start();
+            }
+
         }
     }
 }

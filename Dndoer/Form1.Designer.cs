@@ -108,7 +108,7 @@ namespace Dndoer
             this.Controls.Add(this.d20Image);
             this.Controls.Add(this.resultD20);
             this.Controls.Add(this.d20RollBttn);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
