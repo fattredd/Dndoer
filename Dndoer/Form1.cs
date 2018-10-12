@@ -14,9 +14,12 @@ namespace Dndoer
     public partial class Form1 : Form
     {
         Random rnd = new Random();
+        bool stayTop = false;
+        private Timer timer1;
         public Form1()
         {
             InitializeComponent();
+            InitTimer();
         }
 
         private void roll()
@@ -51,7 +54,7 @@ namespace Dndoer
                     int[] die = { 0,0 };
                     if (int.TryParse(dieArray[0], out die[0]) & int.TryParse(dieArray[1], out die[1]))
                     {
-                        temp = rnd.Next(die[0], die[0] * die[1]);
+                        temp = rnd.Next(die[0], (die[0] * die[1])+1);
                     } else
                     {
                         errorMsg.Text = "Error: " + clean + " is invalid.\nEvaluating as 0.";
@@ -122,9 +125,9 @@ namespace Dndoer
                 this.Close();
             } else if (e.KeyCode == Keys.F1)
             {
-                this.TopMost = !this.TopMost;
+                stayTop = !stayTop;
                 errorMsg.ForeColor = System.Drawing.Color.Black;
-                errorMsg.Text = "Top lock toggled";
+                errorMsg.Text = "Top lock toggled" + stayTop;
                 t.Start();
             }
             else if (e.KeyCode == Keys.F2)
@@ -148,6 +151,19 @@ namespace Dndoer
                 t.Start();
             }
 
+        }
+
+        private void InitTimer()
+        {
+            timer1 = new Timer();
+            timer1.Tick += new EventHandler(t1_Tick);
+            timer1.Interval = 500;
+            timer1.Start();
+        }
+
+        private void t1_Tick(object sender, EventArgs e)
+        {
+            this.TopMost = stayTop;
         }
     }
 }
